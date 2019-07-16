@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ol>
+            <xxtr v-for="item in bookList"
+                  v-bind:one="item"
+                  v-bind:key="item.id">
+            </xxtr>
+    </ol>
+
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="application/javascript">
+    Vue.component('xxtr', {
+        props: ['one'],
+        template: '<li>{{ one.name }}</li>'
+    });
+
+    var app7 = new Vue({
+        el: '#app',
+        data: {
+            bookList: [
+                {id: 1, name: '语文'},
+                {id: 2, name: '数学'},
+                {id: 3, name: '英语'}
+            ]
+        }
+    })
+</script>
+</html>

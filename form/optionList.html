@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--    选择框 多选时 (绑定到一个数组)-->
+<div id="example-6">
+    <select v-model="selected" multiple style="width: 50px;">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <br>
+    <span>Selected: {{ selected }}</span>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="application/javascript">
+    var vm = new Vue({
+        el: '#example-6',
+        data: {
+            selected: []
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    完整写法-->
+    <a v-bind:href="url">{{message}}</a>
+    <!--    缩写-->
+    <a :href="url">{{message}}</a>
+    <p v-if="seen">你能看见我</p>
+    <p>{{reverseMessage}}</p>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--计算属性computed，复杂操作放在computed中-->
+<script type="application/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            url: "http://www.baidu.com",
+            message: "百度",
+        },
+        computed: {
+            reverseMessage: function () {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    })
+</script>
+</html>
